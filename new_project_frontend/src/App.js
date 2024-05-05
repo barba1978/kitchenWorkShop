@@ -1,10 +1,11 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import {NavBar} from './NavBar/NavBar.js';
-import Home from './components/Home';
-import AboutUs from './components/AboutUs';
-import Guest from './components/Guest';
-import Host from './components/Host';
+import NavBar from './NavBar/NavBar'
+import Home from './components/Home'
+import AboutUs from './components/AboutUs'
+import Guest from './components/Guest'
+import Host from './components/Host'
+import './App.css'; 
 
 function App() {
   return (
