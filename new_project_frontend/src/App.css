@@ -1,27 +1,40 @@
 .App {
   text-align: center;
+  box-sizing: border-box;
+}
+
+.headerHostPage{
+align-content: center;
 }
 
 .formContainerHostPage{
-  width: 33%;
   margin: 1rem;
-}
-
-.squareDragAndDropHostPage{
-width: 80px;
-height: 80px;
-border: 1px solid black;
-display: flex;
-justify-content: center;
-text-align: center;
-
+  color:#616161;
 
 }
+
+.cardsContainer{
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+  
+
 .inputsContainerHostPage{
   display: flex;
-  flex-direction: column;
+justify-content: space-around;
   gap : 1rem;
 }
+
+
+.uploadPictureTextHostPage{
+display: flex;
+flex-direction: row;
+
+}
+
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -29,9 +42,7 @@ text-align: center;
 }
 
 
-.App-link {
-  color: #61dafb;
-}
+
 
 @keyframes App-logo-spin {
   from {

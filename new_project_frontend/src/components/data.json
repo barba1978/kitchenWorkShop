@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Workshop A",
+        "description": "A comprehensive culinary workshop focusing on Italian cuisine.",
+        "hours": "4 hours",
+        "guests": "10",
+        "cellNumber": "+1234567890",
+        "price": "100",
+        "address": "1234 Culinary St, Foodtown, FL"
+    },
+    {
+        "name": "Workshop B",
+        "description": "An intensive baking workshop for beginners and enthusiasts alike.",
+        "hours": "3 hours",
+        "guests": "8",
+        "cellNumber": "+0987654321",
+        "price": "75",
+        "address": "5678 Baker’s Blvd, Cookcity, CA"
+    },
+    {
+        "name": "Workshop C",
+        "description": "Explore the art of French cooking in this detailed workshop.",
+        "hours": "5 hours",
+        "guests": "12",
+        "cellNumber": "+1357924680",
+        "price": "120",
+        "address": "1357 Chef’s Corner, Dinetown, TX"
+    }
+]
