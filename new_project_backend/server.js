@@ -1,25 +1,44 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const client = require('./db/db'); // Adjust the path according to your folder structure
+const { Pool } = require('pg');
 
-
-const app = express();
-const port = 5000; // Ensure this matches the port you intend to use
-
-// Middleware to parse incoming JSON requests
-app.use(bodyParser.json());
-app.use(cors());
-
-// Root route to check if the server is running
-app.get('/', (req, res) => {
-    res.send('Hello World');
+// Create a new pool instance
+const pool = new Pool({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'andrea',
+  password: 'Newbank1234',
+  port: 5432,
 });
 
+const app = express();
+const port = 5000;
 
+// Middleware to parse JSON bodies
+app.use(express.json());
 
+// Route to test the connection
+app.get('/test', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT NOW()');
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+});
+
+// Route to get all data from the table
+app.get('/all-data', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * from workshop1');
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+});
 
 // Start the server
 app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+  console.log(`Server running on port ${port}`);
 });
