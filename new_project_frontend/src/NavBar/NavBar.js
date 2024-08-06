@@ -22,6 +22,12 @@ const Navbar = () => {
         <Button sx={{
         fontSize: '1.2rem'
       }} color="inherit"  component={Link} to="/">Home</Button>
+       <Button sx={{
+        fontSize: '1.2rem'
+      }} color="inherit"  component={Link} to="/login">Login</Button>
+       <Button sx={{
+        fontSize: '1.2rem'
+      }} color="inherit"  component={Link} to="/signup">Signup</Button>
         <Button sx={{
         fontSize: '1.2rem'
       }}  color="inherit"  component={Link} to="/about-us">About Us</Button>

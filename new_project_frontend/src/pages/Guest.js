@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CardComponent from "../components/CardComponent"
+import { renderTodayDate } from '../functions/renderTodayDate'
 
 export const Guest = () => {
   const [data, setData] = useState([]);
@@ -19,7 +20,13 @@ export const Guest = () => {
         throw new Error("Network response was not ok");
       }
       const result = await response.json();
-      setData(result);
+      console.log(result);
+      console.log(renderTodayDate);
+      const filteredData = result.filter(function(obj) {
+        return obj.date > renderTodayDate() ;
+      });
+      
+      setData(filteredData);
       setLoading(false);
     } catch (error) {
       setError(error);

@@ -9,6 +9,7 @@ import {
   Collapse,
   Box,
 } from "@mui/material";
+import {renderTodayDate} from '../functions/renderTodayDate'
 
 const CardComponent = ({ item }) => {
   const [expanded, setExpanded] = useState(false);
@@ -19,7 +20,8 @@ const CardComponent = ({ item }) => {
 
   return (
     <Card
-      sx={{  width:"300px", borderRadius: "16px", boxShadow: 3 }}
+      sx={{  width:"300px", borderRadius: "16px", boxShadow: 3,border: item.date === renderTodayDate() && '5px solid red'}}
+    
     >
       <CardMedia
         component="img"
@@ -27,6 +29,7 @@ const CardComponent = ({ item }) => {
         image={item.image}
         alt={item.title}
         width="100%"
+       
       />
       <CardContent>
         <Typography
