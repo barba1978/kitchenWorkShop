@@ -1,20 +1,20 @@
 const express = require('express');
 const { Pool } = require('pg');
+const cors = require('cors');
+const pool = require('./db/db');
 
-// Create a new pool instance
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'andrea',
-  password: 'Newbank1234',
-  port: 5432,
-});
+
 
 const app = express();
 const port = 5000;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
+
+app.use(cors({
+    origin: 'http://localhost:3000'
+  }));
+
 
 // Route to test the connection
 app.get('/test', async (req, res) => {
